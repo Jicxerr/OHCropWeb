@@ -8,6 +8,10 @@ const items = [
     key: "home",
   },
   {
+    label: "Product",
+    key: "product",
+  },
+  {
     label: "Download",
     key: "download",
   },
@@ -33,6 +37,8 @@ function NavComponent() {
 
     if (e.key == "home") {
       navigate("/");
+    } else if (e.key == "product") {
+      navigate("/product");
     } else if (e.key == "download") {
       navigate("/download");
     } else if (e.key == "knowhow") {

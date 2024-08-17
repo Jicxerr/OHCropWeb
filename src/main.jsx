@@ -19,12 +19,14 @@ import About from "./Pages/About/About.jsx";
 import Contact from "./Pages/Contact/Contact.jsx";
 import Download from "./Pages/Download/Download.jsx";
 import KnowHow from "./Pages/KnowHow/KnowHow.jsx";
+import Product from "./Pages/Product/Product.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Landing />}>
         <Route index path="" element={<Home />} />
+        <Route index path="/product" element={<Product />} />
         <Route index path="/download" element={<Download />} />
         <Route index path="/knowhow" element={<KnowHow />} />
         <Route index path="/aboutus" element={<About />} />
