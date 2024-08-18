@@ -86,7 +86,7 @@ function Home() {
           </div>
         </Col>
         <Col xs={24} md={12} className="flex justify-center items-center">
-          <div className="text-center">
+          <div className="text-left">
             <h2 className="text-3xl font-bold text-green-800">
               Innovative Solutions for Modern Farming
             </h2>
