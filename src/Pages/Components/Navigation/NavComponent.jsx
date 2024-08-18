@@ -1,7 +1,10 @@
-import { Menu } from "antd";
+import { Menu, Layout } from "antd";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import React from "react";
+import logo from "../../../assets/logo/ohcroplogo.png";
+
+const { Header } = Layout;
+
 const items = [
   {
     label: "Home",
@@ -28,39 +31,54 @@ const items = [
     key: "contact",
   },
 ];
+
 function NavComponent() {
   const navigate = useNavigate();
   const [current, setCurrent] = useState("home");
+
   const onClick = (e) => {
     console.log("click ", e);
     setCurrent(e.key);
 
-    if (e.key == "home") {
-      navigate("/");
-    } else if (e.key == "product") {
-      navigate("/product");
-    } else if (e.key == "download") {
-      navigate("/download");
-    } else if (e.key == "knowhow") {
-      navigate("/knowhow");
-    } else if (e.key == "aboutus") {
-      navigate("/aboutus");
-    } else if (e.key == "contact") {
-      navigate("/contact");
+    switch (e.key) {
+      case "home":
+        navigate("/");
+        break;
+      case "product":
+        navigate("/product");
+        break;
+      case "download":
+        navigate("/download");
+        break;
+      case "knowhow":
+        navigate("/knowhow");
+        break;
+      case "aboutus":
+        navigate("/aboutus");
+        break;
+      case "contact":
+        navigate("/contact");
+        break;
+      default:
+        break;
     }
   };
+
   return (
-    <>
-      <div className="container mx-auto">
-        <Menu
-          onClick={onClick}
-          selectedKeys={[current]}
-          mode="horizontal"
-          items={items}
-          className=""
-        />
-      </div>
-    </>
+    <Layout>
+      <Header className="fixed top-0 left-0 right-0 z-50 w-full bg-white shadow-md">
+        <div className="container mx-auto flex justify-between items-center h-full">
+          <img src={logo} alt="ohcroplogo" className="h-12" />
+          <Menu
+            onClick={onClick}
+            selectedKeys={[current]}
+            mode="horizontal"
+            items={items}
+            className="flex-grow-0 flex-shrink"
+          />
+        </div>
+      </Header>
+    </Layout>
   );
 }
 

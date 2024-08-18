@@ -2,9 +2,7 @@
 
 function Download() {
   return (
-    <>
-      <h1>Download</h1>
-    </>
+    <div className="min-h-screen bg-gradient-to-br from-green-100 via-white to-green-300 p-8"></div>
   );
 }
 
