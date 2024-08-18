@@ -2,7 +2,7 @@ import photo1 from "../../assets/photo/photo1.jpg";
 import photo2 from "../../assets/photo/photo2.jpg";
 import photo3 from "../../assets/photo/photo3.jpg";
 
-const categories = [
+export const categories = [
   {
     name: "OhCrop Monitoring & Control",
     icon: "📊",
